@@ -19,7 +19,7 @@ Name: ding-libs
 Version: 0.1.2
 Release: %mkrel 1
 Summary: "Ding is not GLib" assorted utility libraries
-Group: Development/Libraries
+Group: Development/C
 License: LGPLv3+
 URL: http://fedorahosted.org/sssd/
 Source0: http://fedorahosted.org/releases/d/i/ding-libs/%{name}-%{version}.tar.gz
@@ -32,7 +32,7 @@ A set of helpful libraries used by projects such as SSSD.
 
 %package -n %{path_utils_libname}
 Summary: Filesystem Path Utilities
-Group: Development/Libraries
+Group: Development/C
 License: LGPLv3+
 Version: %{path_utils_version}
 
@@ -41,7 +41,7 @@ Utility functions to manipulate filesystem pathnames
 
 %package -n %{path_utils_develname}
 Summary: Development files for libpath_utils
-Group: Development/Libraries
+Group: Development/C
 Requires: %{path_utils_libname} = %{path_utils_version}-%{release}
 Provides: path_utils-devel = %{path_utils_version}-%{release}
 License: LGPLv3+
@@ -52,7 +52,7 @@ Utility functions to manipulate filesystem pathnames
 
 
 %package -n %{dhash_libname}
-Group: Development/Libraries
+Group: Development/C
 Summary: Dynamic hash table
 License: LGPLv3+
 Version: %{dhash_version}
@@ -63,7 +63,7 @@ time properties
 
 %package -n %{dhash_develname}
 Summary: Development files for libdhash
-Group: Development/Libraries
+Group: Development/C
 Requires: %{dhash_libname} = %{dhash_version}-%{release}
 Provides: dhash-devel = %{dhash_version}-%{release}
 License: LGPLv3+
@@ -75,7 +75,7 @@ time properties
 
 %package -n %{collection_libname}
 Summary: Collection data-type for C
-Group: Development/Libraries
+Group: Development/C
 License: LGPLv3+
 Version: %{collection_version}
 
@@ -85,7 +85,7 @@ and serialization
 
 %package -n %{collection_develname}
 Summary: Development files for libcollection
-Group: Development/Libraries
+Group: Development/C
 License: LGPLv3+
 Requires: %{collection_libname} = %{collection_version}-%{release}
 Provides: collection-devel = %{collection_version}-%{release}
@@ -97,7 +97,7 @@ and serialization
 
 %package -n %{ref_array_libname}
 Summary: A refcounted array for C
-Group: Development/Libraries
+Group: Development/C
 License: LGPLv3+
 Version: %{ref_array_version}
 
@@ -106,7 +106,7 @@ A dynamically-growing, reference-counted array
 
 %package -n %{ref_array_develname}
 Summary: Development files for libref_array
-Group: Development/Libraries
+Group: Development/C
 Requires: libref_array = %{ref_array_version}-%{release}
 License: LGPLv3+
 Version: %{ref_array_version}
@@ -116,7 +116,7 @@ A dynamically-growing, reference-counted array
 
 %package -n %{ini_config_libname}
 Summary: INI file parser for C
-Group: Development/Libraries
+Group: Development/C
 License: LGPLv3+
 Version: %{ini_config_version}
 
@@ -126,7 +126,7 @@ structure
 
 %package -n %{ini_config_develname}
 Summary: Development files for libini_config
-Group: Development/Libraries
+Group: Development/C
 License: LGPLv3+
 Requires: libini_config = %{ini_config_version}-%{release}
 Version: %{ini_config_version}
