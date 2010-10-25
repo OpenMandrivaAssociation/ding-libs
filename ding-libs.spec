@@ -17,7 +17,7 @@
 
 Name: ding-libs
 Version: 0.1.2
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: "Ding is not GLib" assorted utility libraries
 Group: Development/C
 License: LGPLv3+
@@ -107,7 +107,8 @@ A dynamically-growing, reference-counted array
 %package -n %{ref_array_develname}
 Summary: Development files for libref_array
 Group: Development/C
-Requires: libref_array = %{ref_array_version}-%{release}
+Requires: %{ref_array_libname} = %{ref_array_version}-%{release}
+Provides: ref_array-devel = %{ref_array_version}-%{release}
 License: LGPLv3+
 Version: %{ref_array_version}
 
@@ -128,7 +129,8 @@ structure
 Summary: Development files for libini_config
 Group: Development/C
 License: LGPLv3+
-Requires: libini_config = %{ini_config_version}-%{release}
+Requires: %{ini_config_libname} = %{ini_config_version}-%{release}
+Provides: ini_config-devel = %{ini_config_version}-%{release}
 Version: %{ini_config_version}
 
 %description -n %{ini_config_develname}
