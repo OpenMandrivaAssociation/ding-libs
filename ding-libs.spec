@@ -245,3 +245,14 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/ini_config.pc
 %doc ini/doc/html/
 
+
+
+%changelog
+* Mon Oct 25 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.1.2-2mdv2011.0
++ Revision: 589349
+- fix some dependencies
+
+* Sat Oct 23 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.1.2-1mdv2011.0
++ Revision: 587732
+- import ding-libs
+
