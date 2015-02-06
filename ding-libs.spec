@@ -17,7 +17,7 @@
 
 Name: ding-libs
 Version: 0.1.2
-Release: %mkrel 2
+Release: 3
 Summary: "Ding is not GLib" assorted utility libraries
 Group: Development/C
 License: LGPLv3+
