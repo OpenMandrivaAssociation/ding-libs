@@ -211,6 +211,7 @@ structure.
 %doc ini/doc/html/
 %doc COPYING COPYING.LESSER
 %{_includedir}/ini_config.h
+%{_includedir}/ini_configmod.h
 %{_includedir}/ini_comment.h
 %{_includedir}/ini_configobj.h
 %{_includedir}/ini_valueobj.h
