@@ -35,7 +35,7 @@ Version:	0.6.0
 Release:	1
 License:	LGPLv3+
 Group:		Development/C
-Url:		http://fedorahosted.org/sssd/
+Url:		https://fedorahosted.org/sssd/
 Source0:	http://fedorahosted.org/releases/d/i/ding-libs/%{name}-%{version}.tar.gz
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(check)
