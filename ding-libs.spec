@@ -37,6 +37,11 @@ License:	LGPLv3+
 Group:		Development/C
 Url:		https://fedorahosted.org/sssd/
 Source0:	http://fedorahosted.org/releases/d/i/ding-libs/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(check)
 
