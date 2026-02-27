@@ -1,45 +1,45 @@
 %define path_utils_version 0.2.1
-%define dhash_version 0.4.3
+%define dhash_version 0.5.0
 %define collection_version 0.6.2
 %define ref_array_version 0.1.4
-%define ini_config_version 1.1.0
+%define ini_config_version 2.0.0
 %define basicobjects_version 0.1.1
 
 %define path_utils_major 1
-%define path_utils_libname %mklibname path_utils %{path_utils_major}
+%define path_utils_libname %mklibname path_utils
 %define path_utils_devname %mklibname path_utils -d
 
 %define dhash_major 1
-%define dhash_libname %mklibname dhash %{dhash_major}
+%define dhash_libname %mklibname dhash
 %define dhash_devname %mklibname dhash -d
 
 %define collection_major 4
-%define collection_libname %mklibname collection %{collection_major}
+%define collection_libname %mklibname collection
 %define collection_devname %mklibname collection -d
 
 %define ref_array_major 1
-%define ref_array_libname %mklibname ref_array %{ref_array_major}
+%define ref_array_libname %mklibname ref_array
 %define ref_array_devname %mklibname ref_array -d
 
 %define ini_config_major 5
-%define ini_config_libname %mklibname ini_config %{ini_config_major}
+%define ini_config_libname %mklibname ini_config
 %define ini_config_devname %mklibname ini_config -d
 
 %define basicobjects_major 0
-%define basicobjects_libname %mklibname basicobjects %{basicobjects_major}
+%define basicobjects_libname %mklibname basicobjects
 %define basicobjects_devname %mklibname basicobjects -d
 
-Summary:	"Ding is not GLib" assorted utility libraries
+Summary:	"DING is not GNU" helper libraries for SSSD and FreeIPA
 Name:		ding-libs
-Version:	0.6.0
+Version:	0.6.2
 Release:	1
 License:	LGPLv3+
 Group:		Development/C
-Url:		https://fedorahosted.org/sssd/
-Source0:	http://fedorahosted.org/releases/d/i/ding-libs/%{name}-%{version}.tar.gz
+Url:		https://github.com/SSSD/ding-libs
+Source0:	https://github.com/SSSD/ding-libs/releases/download/%{version}/ding-libs-%{version}.tar.gz
+BuildSystem:	autotools
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
 BuildRequires:	doxygen
@@ -75,7 +75,6 @@ Utility functions to manipulate filesystem pathnames.
 
 %files -n %{path_utils_devname}
 %doc path_utils/README.path_utils
-%doc path_utils/doc/html/
 %doc COPYING COPYING.LESSER
 %{_libdir}/libpath_utils.so
 %{_libdir}/pkgconfig/path_utils.pc
@@ -143,7 +142,6 @@ A data-type to collect data in a hierarchical structure for easy iteration
 and serialization.
 
 %files -n %{collection_devname}
-%doc collection/doc/html/
 %doc COPYING COPYING.LESSER
 %{_includedir}/collection.h
 %{_includedir}/collection_tools.h
@@ -179,7 +177,6 @@ A dynamically-growing, reference-counted array.
 
 %files -n %{ref_array_devname}
 %doc refarray/README.ref_array
-%doc refarray/doc/html/
 %doc COPYING COPYING.LESSER
 %{_includedir}/ref_array.h
 %{_libdir}/libref_array.so
@@ -213,7 +210,6 @@ Library to process config files in INI format into a libcollection data
 structure.
 
 %files -n %{ini_config_devname}
-%doc ini/doc/html/
 %doc COPYING COPYING.LESSER
 %{_includedir}/ini_config.h
 %{_includedir}/ini_configmod.h
@@ -256,20 +252,13 @@ Basic object types.
 
 #----------------------------------------------------------------------------
 
-%prep
-%setup -q
+%build -a
+%make_build -C _OMV_rpm_build docs
 
-%build
-%configure \
-	--disable-static
-
-%make
-%make docs
-
-%install
+%install -p
 rm -fr dhash/examples/{.dirstamp,.deps/.dirstamp,dhash_example.o,dhash_test.o}
-%makeinstall_std
 
+%install -a
 # Remove the example files from the output directory
 # We will copy them directly from the source directory
 # for packaging
@@ -284,4 +273,4 @@ rm -f */doc/html/installdox
 find %{buildroot} -size 0 -delete
 
 %check
-%make check
+%make_build -C _OMV_rpm_build check
