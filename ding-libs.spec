@@ -31,7 +31,7 @@
 
 Summary:	"DING is not GNU" helper libraries for SSSD and FreeIPA
 Name:		ding-libs
-Version:	0.6.2
+Version:	0.7.0
 Release:	1
 License:	LGPLv3+
 Group:		Development/C
